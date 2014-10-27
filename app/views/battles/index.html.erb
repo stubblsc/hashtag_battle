@@ -1,0 +1,42 @@
+<h1>Previous Battles</h1>
+
+<%# search form %>
+<div class="col-md-3 pull-right" %>
+  <%= form_tag battles_path, :method => 'get', :id => "battles_search" do %>
+    <p>
+      <div class="col-md-8">
+        <%= text_field_tag :search, params[:search], class: "form-control" %>
+      </div>
+      <div class="col-md-4">
+        <%= submit_tag "Search", class: "btn btn-md btn-primary pull-right" %>
+      </div>
+    </p>
+  <% end %>
+</div>
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th><%= sortable "brand1", "Brand1" %></th>
+      <th><%= sortable "brand2", "Brand2" %></th>
+      <th><%= sortable "created_at", "Battle Date" %></th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @battles.each do |battle| %>
+      <tr>
+        <td><%= battle.brand1 %></td>
+        <td><%= battle.brand2 %></td>
+	<td><%= battle.created_at %></td>
+        <td><%= link_to 'Show', battle, class: "btn btn-xs btn-info" %></td>
+        <td><%= link_to 'Destroy', battle, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-warning" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Battle', new_battle_path, class: "btn btn-sm btn-primary" %>

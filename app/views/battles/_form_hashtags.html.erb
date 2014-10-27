@@ -1,0 +1,23 @@
+<%# form for submitting hashtags to battle %>
+<div class="col-md-12 text-center">
+  <h1><span class="label label-info">Enter two hashtags to battle!</span></h1>
+  <br><br>
+  <%= form_for @battle do |f| %>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <div class="col-md-8 pull-right">
+          <%= f.label :brand1, "Brand 1:", class: "label label-default" %><br>
+          <%= f.text_field :brand1, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-8 pull-left">
+          <%= f.label :brand2, "Brand 2:", class: "label label-default" %><br>
+          <%= f.text_field :brand2, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <%= f.submit "Battle", :class => "btn btn-md btn-primary" %>
+  <% end %>
+</div>

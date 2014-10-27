@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  battle_id: 
+  owner: MyText
+  brand: MyText
+  message: MyText
+
+two:
+  battle_id: 
+  owner: MyText
+  brand: MyText
+  message: MyText

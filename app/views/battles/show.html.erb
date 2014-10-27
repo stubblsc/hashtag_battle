@@ -1,0 +1,38 @@
+<%# battle streaming view %>
+
+<%# page specific script for updating setting colors %>
+<% content_for :head do %>
+  <script>
+    $(document).ready(set_color);
+  </script>
+<% end %>
+
+<%# renders one partial for brand1 and one partial for brand2 %>
+<div class="jumbotron well well-lg">
+  <div class="container">
+    <div class="col-md-12 text-center">
+      <div class="col-md-6">
+        <div id="brand1_count" class="col-md-10 well" data-battle_id="<%= @battle.id %>">
+          <%= render partial: "brand1_count" %>
+        </div>
+        <br>
+        <div id="brand1_tweets" class="col-md-10 well">
+          <%= render partial: "brand1_tweets" %>
+        </div>
+      </div>
+      <!--div class="col-md-2"></div-->
+      <div class="col-md-6">
+        <div id="brand2_count" class="col-md-10 well">
+          <%= render partial: "brand2_count" %>
+        </div>
+        <br>
+        <div id="brand2_tweets" class="col-md-10 well">
+          <%= render partial: "brand2_tweets" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to 'Back', battles_path, class: "btn btn-sm btn-primary" %>

@@ -1,0 +1,8 @@
+<%# partial for displaying the tweets for brand1 %>
+<% battle = Battle.find(params[:id]) %>
+<% brand1_tweets = Tweet.where(:battle_id => battle.id, :brand => battle.brand1) %>
+<ul>
+  <% brand1_tweets.each do |tweet| %>
+    <li><%= tweet.message %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,4 @@
+<%# partial for displaying the count of brand2 %>
+<% battle = Battle.find(params[:id]) %>
+<% brand2_count = Tweet.where(:battle_id => battle.id, :brand => battle.brand2).count %>
+<h3><div class="label"><%= battle.brand2 %>:</div><div id="brand2"><span class="badge"><%= brand2_count %></span></div></h3>

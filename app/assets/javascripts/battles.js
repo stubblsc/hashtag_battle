@@ -16,7 +16,7 @@ function set_color(){
 
 function update(){
   set_color();
-  var battle_id = $("#brand1_count").attr("data-battle_id");
+  var battle_id = $("#brand1_count").attr("data-battle-id");
   $.getScript("/battles/update.js?id="+battle_id);
   set_color();
   setTimeout(update, 500);

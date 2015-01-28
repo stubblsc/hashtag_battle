@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026204429) do
+ActiveRecord::Schema.define(version: 20141104012121) do
 
   create_table "battles", force: true do |t|
-    t.text     "brand1"
-    t.text     "brand2"
+    t.string   "brand1"
+    t.string   "brand2"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tweets", force: true do |t|
     t.integer  "battle_id"
-    t.text     "owner"
-    t.text     "brand"
-    t.text     "message"
+    t.string   "owner"
+    t.string   "brand"
+    t.string   "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

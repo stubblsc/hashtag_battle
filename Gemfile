@@ -45,3 +45,5 @@ gem 'twitter'
 
 #gem to use bootstrap with rails
 gem 'twitter-bootstrap-rails'
+
+gem 'figaro'

@@ -3,10 +3,10 @@ desc "Stream tweets"
 task :stream_tweets => :environment do
   #twitter config info
   client = client = Twitter::Streaming::Client.new do |config|
-    config.consumer_key        = '4kK8srD0faDXiJiDhHo9zTFoK'
-    config.consumer_secret     = 'TZBMUQf1Eh0yFxykynAIM18aMpPJ8PhNNtge9nPwZ4hSj4VaDJ'
-    config.access_token        = '2836267065-AUxhkkHKefmdKzQ0SGdWlnQ7GqvFATRhXQ00Joh'
-    config.access_token_secret = 'o5CWZ8nRnjB9OYTo36WKCcItwWNOZkryRlBps3E0Z1RhJ'
+    config.consumer_key        = ENV['consumer_key']
+    config.consumer_secret     = ENV['consumer_secret']
+    config.access_token        = ENV['access_token']
+    config.access_token_secret = ENV['access_token_secret']
   end
 
   #get brands and battle objects the tweets are streaming for

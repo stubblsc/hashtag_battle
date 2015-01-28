@@ -52,7 +52,7 @@ class BattlesController < ApplicationController
   #live streams tweets for hashtags and counts for the hashtags
   def stream
     #kills all tweet streaming processes
-    system "pkill -f stream_tweets"
+    #system "pkill -f stream_tweets"
 
     #invokes rake task for streaming tweets for 2 different brands
     system "rake stream_tweets BRAND1=#{@battle.brand1} BRAND2=#{@battle.brand2} BATTLE_ID=#{@battle.id} &"

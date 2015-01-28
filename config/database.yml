@@ -48,7 +48,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: hashtag_battle_production
-  username: hashtag_battle
-  password: <%= ENV['HASHTAG_BATTLE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= ENV['pg_url'] %>
+  database: <%= ENV['pg_db'] %>
+  username: <%= ENV['pg_user'] %>
+  password: <%= ENV['pg_pass'] %>

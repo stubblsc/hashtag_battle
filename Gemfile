@@ -47,3 +47,5 @@ gem 'twitter'
 gem 'twitter-bootstrap-rails'
 
 gem 'figaro'
+
+gem 'rails_12factor'
